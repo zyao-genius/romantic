@@ -20,7 +20,7 @@
         </p>
         <p class="bloginfo">
             <i class="avatar">
-                <img src="http://49.235.173.40:8090/upload/2020/1/edison-b67a8fa9e387480a91eb5eadb2855e96.jpg" />
+                <img src="${user.avatar!}" />
             </i>
             <span>zyao</span><span>${post.createTime?string["yyyy年MM月dd日"]!}</span><span>【<a href="/">原创模板</a>】</span>
         </p>
