@@ -8,3 +8,5 @@
 <div class="con_text">
     ${post.formatContent!}
 </div>
+
+<p><span class="diggit">很赞哦！ (74)</span></p>
