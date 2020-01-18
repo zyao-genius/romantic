@@ -37,6 +37,9 @@
     <#--  导航栏  -->
     <#include "navbar.ftl">
 
+    <#nested />
+
+
     </body>
 
 </#macro>
