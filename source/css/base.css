@@ -247,7 +247,6 @@ footer { background: #373D41; width: 100%; border-top: #00C1DE 10px solid; paddi
 .endnav p { margin-bottom: 5px }
 footer a { color: #73777a; }
 footer a:hover { color: #00C1DE }
-.top { width: 40px; height: 40px; display: block; background: url(../images/top.png) no-repeat center #000; right: 50px; bottom: 10%; position: fixed }
 /*
 list.html
 */
@@ -336,9 +335,9 @@ about
 .qq_join li p { margin: 10px; }
 .qq_join li b { color: #019881; margin: 0 5px; }
 /*
-	
+
 	info.html
-	
+
 */
 .con_tilte { font-size: 22px; margin-top: 20px }
 .con_nav { float: right; font-size: 14px; color: #666 }
@@ -411,7 +410,7 @@ textarea#lytext { width: 99%; }
 .ecomment { border: #dedcdc 1px solid; padding: 10px; margin-bottom: 10px; }
 span.ecommentauthor { color: #b5b5b5; font-size: 14px; margin-bottom: 5px; display: block; }
 .gbook .fb ul { margin: 10px 10px; padding: 10px 10px 10px 70px; border-bottom: #ececec 1px solid; }
-.gbook .fb:nth-child(8n-7) ul { background: url(../../../e/tool/images/tx10.jpg) no-repeat top 20px left 10px; } 
+.gbook .fb:nth-child(8n-7) ul { background: url(../../../e/tool/images/tx10.jpg) no-repeat top 20px left 10px; }
 .gbook .fb:nth-child(8n-6) ul { background: url(../../../e/tool/images/tx9.jpg) no-repeat top 20px left 10px; }
 .gbook .fb:nth-child(8n-5) ul { background: url(../../../e/tool/images/tx8.jpg) no-repeat top 20px left 10px; }
 .gbook .fb:nth-child(8n-4) ul { background: url(../../../e/tool/images/tx7.jpg) no-repeat top 20px left 10px; }

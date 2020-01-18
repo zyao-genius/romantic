@@ -1,0 +1,15 @@
+/*返回顶部*/
+.back-top {
+    position: fixed;
+    display: none;
+    z-index: 20;
+    bottom: 1.5rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, .4);
+    width: 2rem;
+    height: 2rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.8rem;
+    border-radius: 1rem;
+}
