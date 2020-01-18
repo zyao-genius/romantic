@@ -4,6 +4,13 @@
 keywords="${options.seo_keywords!}"
 description="${post.title!}">
 
+    <#--阅读进度-->
+    <#if (settings.open_read_progress)?? && settings.open_read_progress?c == 'true'>
+        <div id="readProgress">
+            <div class="read-progress-bar" role="progressbar" style="width: 0"></div>
+        </div>
+    </#if>
+
     <#-- 主容器 -->
     <article>
         <#--左侧-->

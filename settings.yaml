@@ -11,7 +11,7 @@ general:
       name: link_color
       label: 链接颜色
       type: color
-      default: '#007bff'
+      default: '##333'
       placeholder: '链接颜色'
     hover_color:
       name: hover_color

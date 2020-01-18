@@ -38,12 +38,15 @@
         <#--文章界面需要引入的CSS-->
         <#if is_post??>
             <link rel="stylesheet" href="${static!}/source/css/post.css">
+            <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
+            <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+            <script type="text/javascript" src="${static!}/source/js/post.js"></script>
         </#if >
 
         <style>
             /* 全局a标签的颜色 */
             a {
-                color: ${settings.link_color?default('#007bff')};
+                color: ${settings.link_color?default('#333')};
                 text-decoration: none !important;
             }
 
@@ -51,6 +54,12 @@
             a:hover {
                 color: ${settings.hover_color?default('#dc3545')};
                 text-decoration: none !important;
+            }
+
+            /* 阅读进度的进度条颜色 */
+            #readProgress .read-progress-bar {
+                background: ${settings.progress_color?default('#dc3545')} !important;
+                height: 0.1875rem;
             }
 
         </style>
