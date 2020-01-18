@@ -39,6 +39,8 @@
 
     <#nested />
 
+    <#-- 公共底部代码，包含：统计代码，底部信息 -->
+    <#include "footer.ftl">
 
     </body>
 
