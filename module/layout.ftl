@@ -35,6 +35,7 @@
     </head>
     <body>
     <#--  导航栏  -->
+    <#include "navbar.ftl">
 
     </body>
 
