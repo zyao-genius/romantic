@@ -34,6 +34,9 @@
         <script src="${static!}/source/js/comm.js"></script>
         <script type="text/javascript" src="${static!}/source/js/index.js"></script>
 
+        <script>
+            var serverIp = "${static!}";
+        </script>
 
         <#--文章界面需要引入的CSS-->
         <#if is_post??>
@@ -69,17 +72,17 @@
 
     </head>
     <body>
-    <#--  导航栏  -->
-    <#include "navbar.ftl">
+        <#--  导航栏  -->
+        <#include "navbar.ftl">
 
-    <#nested />
+        <#nested />
 
-    <#-- 公共底部代码，包含：统计代码，底部信息 -->
-    <#include "footer.ftl">
+        <#-- 公共底部代码，包含：统计代码，底部信息 -->
+        <#include "footer.ftl">
 
-    <div id="backTop" class="back-top">
-        <span><i class="fas fa-caret-up"></i></span>
-    </div>
+        <#--回到顶部箭头-->
+        <#include "backtop/backtop.ftl">
+
     </body>
 
 </#macro>

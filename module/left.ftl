@@ -1,6 +1,6 @@
 <div class="lbox">
     <#--轮播图-->
-    <#include "looppicture/loop.ftl">
+    <#include "banner/banner.ftl">
 
     <#--大字标题-->
     <#include "headline/headline.ftl">
@@ -9,7 +9,7 @@
     <#include "zhuanti/zhuanti.ftl">
 
     <#--广告位-->
-    <#-- <#include "module/adsense/adsense1.ftl">-->
+     <#include "adsense/left1.ftl">
 
     <#--个人博客-->
     <#include "personalblog/index.ftl">

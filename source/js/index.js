@@ -51,4 +51,21 @@ $(function () {
     autoResizeIframe();
     // 加入媒体控制
     $("video, audio").prop('controls', true);
+
+    /*处理广告位图片的路径*/
+    /*let resolveAdvancesImagePath = () => {
+        $(".ad").find("img").each(function () {
+            let imagePath = $(this).attr("src");
+            if (isDefaultImagePath(imagePath)){
+                $(this).attr("src", serverIp + imagePath);
+            }
+        })
+        function isDefaultImagePath(path) {
+            return path.indexOf("/") == 0 ? true : false;
+        }
+    }
+
+    resolveAdvancesImagePath();*/
+
+
 });
