@@ -88,7 +88,7 @@ user_info:
       name: user_location
       label: 位置信息
       type: text
-      default: '北京 海淀'
+      default: '上海 静安'
       placeholder: '住址'
     github_url:
       name: github_url

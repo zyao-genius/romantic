@@ -8,6 +8,10 @@
             <@listItem post=post />
         </#list>
 
+        <#--分页-->
+        <#include "pagination.ftl">
+        <@pagination posts=posts rainbow=rainbow/>
+
         <!--多图模式 置顶设计-->
         <#--<li>
             <h3 class="blogtitle"><a href="/" target="_blank"><b>【顶】</b>别让这些闹心的套路，毁了你的网页设计!</a></h3>
