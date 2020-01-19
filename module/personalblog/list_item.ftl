@@ -8,7 +8,7 @@
         <#--缩略图-->
         <#if (post.thumbnail)?? && post.thumbnail?trim != ''>
             <span class="blogpic imgscale">
-                <i><a href="#">原创模板</a></i>
+                <i><a href="#">杂谈</a></i>
                 <a href="/" title="">
                     <img src="${post.thumbnail!}" alt="${post.title!}">
                 </a>
@@ -22,7 +22,7 @@
             <i class="avatar">
                 <img src="${user.avatar!}" />
             </i>
-            <span>zyao</span><span>${post.createTime?string["yyyy年MM月dd日"]!}</span><span>【<a href="/">原创模板</a>】</span>
+            <span>zyao</span><span>${post.createTime?string["yyyy年MM月dd日"]!}</span><span>【<a href="/">杂谈</a>】</span>
         </p>
     </li>
 </#macro>

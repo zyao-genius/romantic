@@ -12,7 +12,7 @@
     <#include "recommend/recommend.ftl">
 
     <#--右边广告位1-->
-    <#include "adsense/right1.ftl">
+    <#--<#include "adsense/right1.ftl">-->
 
     <#--猜你喜欢-->
     <#include "guess/guess.ftl">
