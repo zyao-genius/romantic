@@ -26,7 +26,7 @@
         <#--Font Awesome 图标库-->
         <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
         <link href="${static!}/source/css/base.css" rel="stylesheet">
-        <link href="${static!}/source/css/m.css" rel="stylesheet">
+        <link href="${static!}/source/css/global.css" rel="stylesheet">
         <#--页面公用的CSS-->
         <link rel="stylesheet" href="${static!}/source/css/style.css">
 

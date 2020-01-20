@@ -15,7 +15,7 @@
 @media screen and (max-width: 1023px) {
 /*header*/
 header { position: fixed; z-index: 999 }
-nav { width: 100%; height: auto; background: rgba(0,0,0,0.5); margin-top: 18px; position: fixed; z-index: 999; top: 42px; }
+/*nav { width: 100%; height: auto; background: rgba(0,0,0,0.5); margin-top: 18px; position: fixed; z-index: 999; top: 42px; }*/
 .searchico { position: absolute; top: 6px; right: 10px; }
 .search { width: 80% }
 .navbox { width: 100% }
