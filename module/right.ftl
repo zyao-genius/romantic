@@ -21,5 +21,5 @@
     <#--<#include "adsense/right2.ftl">-->
 
     <#--友情链接-->
-    <#include "../links.ftl">
+    <#--<#include "../links.ftl">-->
 </div>

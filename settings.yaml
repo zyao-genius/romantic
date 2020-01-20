@@ -181,41 +181,11 @@ code:
       placeholder: '代码字体'
 plate_setting:
   label: 板块设置
+  description: 滚动模块
   items:
     plate_banner:
       name: plate_banner
       label: 滚动模块
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 显示
-        - value: false
-          label: 关闭
-adsense_setting:
-  label: 广告位
-  items:
-    open_adsense_left1:
-      name: open_adsense_left1
-      label: 是否开启广告位左1
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    adsense_left1_image:
-      name: adsense_left1_image
-      label: 显示图片
-      type: attachment
-      default: 'romantic/source/images/adleft1.png'
-    adsense_left1_link:
-      name: adsense_left1_link
-      label: 广告链接
-      type: text
-      default: 'https://www.aliyun.com/minisite/goods?userCode=l1qstn8f'
+      
 
 

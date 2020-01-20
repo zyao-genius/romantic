@@ -2,14 +2,15 @@
     <h2 class="htitle">我的博客</h2>
     <ul>
 
-        <#--文章-->
+        <#--文章列表 start-->
         <#include "list_item.ftl"/>
         <#list posts.content as post>
             <@listItem post=post />
         </#list>
+        <#--文章列表 end-->
 
         <#--分页-->
-        <#include "pagination.ftl">
+        <#include "../pagination/pagination.ftl">
         <@pagination posts=posts rainbow=rainbow/>
 
         <!--多图模式 置顶设计-->
