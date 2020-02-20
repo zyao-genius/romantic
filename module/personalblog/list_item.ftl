@@ -22,7 +22,7 @@
             <i class="avatar">
                 <img src="${user.avatar!}" />
             </i>
-            <span>zyao</span><span>${post.createTime?string["yyyy年MM月dd日"]!}</span><span>【<a href="/">杂谈</a>】</span>
+            <span>${user.nickname!}</span><span>${post.createTime?string["yyyy年MM月dd日"]!}</span><span>【<a href="/">杂谈</a>】</span>
         </p>
     </li>
 </#macro>
