@@ -21,8 +21,6 @@
             </#if>
         </#if>
 
-
-        <#--<h2 class="htitle">搜索结果</h2>-->
         <#--左边的文章列表 start-->
         <#include "../personalblog/list_item.ftl"/>
         <#list posts.content as post>

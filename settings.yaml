@@ -181,11 +181,13 @@ code:
       placeholder: '代码字体'
 plate_setting:
   label: 板块设置
-  description: 滚动模块
   items:
     plate_banner:
+      description: 滚动模块指向
       name: plate_banner
       label: 滚动模块
+      type: text
+      placeholder: 选择图片
       
 
 
