@@ -380,7 +380,7 @@ margin: auto }
 .timebox span:after { position: absolute; content: ""; width: 2px; height: 40px; background: #e0dfdf; right: 18px }
 .timebox li { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
 .timebox li i { position: relative; font-style: normal }
-.timebox li i:before { content: " "; height: 10px; width: 10px; border: 2px solid #cccaca; background: #fff; position: absolute; top: 4px; left: -26px; border-radius: 50%; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; -ms-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
+.timebox li i:before { content: " "; height: 10px; width: 10px; border: 2px solid #cccaca; background: #fff; position: absolute; top: 4px; left: -30px; border-radius: 50%; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; -ms-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; box-sizing: unset}
 .timebox li:hover i:before { background: #080808 }
 .pagelist.mt20 { margin-top: 20px; }
 

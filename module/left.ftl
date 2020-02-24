@@ -6,7 +6,7 @@
     <#include "headline/headline.ftl">
 
     <#--专题-->
-    <#include "zhuanti/zhuanti.ftl">
+    <#--<#include "zhuanti/zhuanti.ftl">-->
 
     <#--广告位-->
      <#include "adsense/left1.ftl">

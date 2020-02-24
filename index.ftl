@@ -4,11 +4,9 @@
 <@layout title="首页 | ${options.blog_title!}"
 keywords="${options.seo_keywords!}"
 description="${options.seo_description!}">
-    <article>
-        <#--左边部分-->
-        <#include "module/left.ftl">
+<#--左边部分-->
+    <#include "module/left.ftl">
 
-        <#--右边部分-->
-        <#include "module/right.ftl">
-    </article>
+<#--右边部分-->
+    <#include "module/right.ftl">
 </@layout>

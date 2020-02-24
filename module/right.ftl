@@ -15,7 +15,7 @@
     <#--<#include "adsense/right1.ftl">-->
 
     <#--猜你喜欢-->
-    <#include "guess/guess.ftl">
+    <#--<#include "guess/guess.ftl">-->
 
     <#--右边广告位2-->
     <#--<#include "adsense/right2.ftl">-->
