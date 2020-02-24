@@ -2,8 +2,11 @@
     <#--博主信息-->
     <#include "profile/profile.ftl">
 
+    <#--最近更新-->
+    <#include "recently/recently.ftl">
+    
     <#--网站公告-->
-    <#include "notice/notice.ftl">
+    <#--<#include "notice/notice.ftl">-->
 
     <#--点击排行-->
     <#include "ranking/ranking.ftl">

@@ -11,6 +11,6 @@
         ${post.formatContent!}
     </div>
 
-    <p><span class="diggit">很赞哦！ (74)</span></p>
+    <p><span class="diggit">很赞哦！ (${post.likes!})</span></p>
 </div>
 
