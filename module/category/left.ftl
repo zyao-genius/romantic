@@ -27,7 +27,7 @@
             </#list>
             <#--分页-->
             <#include "../pagination/pagination.ftl">
-            <@pagination posts=posts rainbow=rainbow/>
+            <@pagination posts=posts rainbow=rainbow slugName=category.slugName/>
 
         </ul>
     </div>
