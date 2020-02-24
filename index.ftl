@@ -5,8 +5,8 @@
 keywords="${options.seo_keywords!}"
 description="${options.seo_description!}">
 <#--左边部分-->
-    <#include "module/left.ftl">
+    <#include "module/index/left.ftl">
 
 <#--右边部分-->
-    <#include "module/right.ftl">
+    <#include "module/index/right.ftl">
 </@layout>

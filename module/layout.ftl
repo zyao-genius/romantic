@@ -73,14 +73,14 @@
 </head>
 <body>
 <#--  导航栏  -->
-<#include "navbar.ftl">
+<#include "navigation/navbar.ftl">
 
 <#--主容器-->
 <article>
     <#nested />
 </article>
 <#-- 公共底部代码，包含：统计代码，底部信息 -->
-<#include "footer.ftl">
+<#include "footer/footer.ftl">
 
 <#--回到顶部箭头-->
 <#include "backtop/backtop.ftl">

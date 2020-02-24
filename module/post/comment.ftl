@@ -2,7 +2,7 @@
 <section id="comment" class="mb-5">
     <#if !post.disallowComment>
         <div>
-            <#include "../comment.ftl">
+            <#include "../comment/comment.ftl">
             <@comment target=post type="post" />
         </div>
     </#if>

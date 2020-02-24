@@ -1,18 +1,18 @@
 <div class="rbox">
     <#--博主信息-->
-    <#include "profile/profile.ftl">
+    <#include "../profile/profile.ftl">
 
     <#--最近更新-->
-    <#include "recently/recently.ftl">
+    <#include "../recently/recently.ftl">
     
     <#--网站公告-->
     <#--<#include "notice/notice.ftl">-->
 
     <#--点击排行-->
-    <#include "ranking/ranking.ftl">
+    <#include "../ranking/ranking.ftl">
 
     <#--站长推荐-->
-    <#include "recommend/recommend.ftl">
+    <#include "../recommend/recommend.ftl">
 
     <#--右边广告位1-->
     <#--<#include "adsense/right1.ftl">-->
