@@ -10,7 +10,7 @@
                 <@menuTag method="tree">
                     <#list menus?sort_by('priority') as menu>
                         <#if menu.children?? && menu.children?size gt 0>
-                            <li class="menu"><a href="<#if menu.url?starts_with("/")>${menu.url!}<#else>/${menu.url!}</#if>" target="${menu.target!}"> ${menu.name!}</a>
+                            <li class="menu"><a href="javascript:void(0)" target="${menu.target!}"> ${menu.name!}</a>
                                 <ul class="sub">
                                     <#list menu.children as children>
                                         <li>
@@ -30,7 +30,7 @@
                 <#--分类菜单-->
                 <@categoryTag method="list">
                     <#if categories?? && categories?size gt 0>
-                        <li class="menu"><a href="#">分类</a>
+                        <li class="menu"><a href="javascript:void(0)">分类</a>
                             <ul class="sub">
                                 <#list categories as categorie>
                                     <li>
