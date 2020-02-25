@@ -3,7 +3,7 @@
 <#macro listItem post>
 
 <#--一个列表项-->
-    <li>
+    <li data-scroll-reveal>
         <h3 class="blogtitle"><a href="/archives/${post.url!}">${post.title!}</a></h3>
         <#--缩略图-->
         <#if (post.thumbnail)?? && post.thumbnail?trim != ''>
@@ -31,3 +31,5 @@
         </p>
     </li>
 </#macro>
+<script src="${static!}/source/js/scrollReveal.js"></script>
+<script src="${static!}/source/js/initScrollReveal.js"></script>
