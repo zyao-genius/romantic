@@ -34,10 +34,6 @@
     <script src="${static!}/source/js/comm.js"></script>
     <script type="text/javascript" src="${static!}/source/js/index.js"></script>
 
-    <script>
-        var serverIp = "${static!}";
-    </script>
-
     <#--文章界面需要引入的CSS-->
     <#if is_post??>
         <link rel="stylesheet" href="${static!}/source/css/post.css">
