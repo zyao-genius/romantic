@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="${static!}/source/css/style.css">
 
     <script src="${static!}/source/js/jquery-1.8.3.min.js"></script>
+    <#--<script src="${static!}/source/live2d/assert/jquery.min.js"></script>-->
     <script src="${static!}/source/js/comm.js"></script>
     <script type="text/javascript" src="${static!}/source/js/index.js"></script>
 
@@ -78,6 +79,7 @@
 <#-- 公共底部代码，包含：统计代码，底部信息 -->
 <#include "footer/footer.ftl">
 
+<#include "live2d/live2d.ftl">
 <#--回到顶部箭头-->
 <#include "backtop/backtop.ftl">
 
