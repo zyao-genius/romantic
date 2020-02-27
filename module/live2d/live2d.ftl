@@ -21,7 +21,7 @@
         live2d_settings['modelTexturesId'] = 87;*/
         live2d_settings['modelTexturesRandMode']= 'switch';
         live2d_settings['waifuEdgeSide'] = 'right:30';
-        live2d_settings['modelAPI'] = '${static!}/source/live2d/model/Potion-Maker/Pio/skinJson/animal-costume-racoon.json';
+        live2d_settings['modelAPI'] = '${static!}/source/live2d/model/Potion-Maker/Pio/skinJson/hanbok-costume-red.json';
 
         initModel("${static!}/source/live2d/assets/waifu-tips.json")
     });
