@@ -1,24 +1,4 @@
-window.live2d_settings = Array(); /*
-
-    く__,.ヘヽ.　　　　/　,ー､ 〉
-    　　　　　＼ ', !-─‐-i　/　/´
-    　　　 　 ／｀ｰ'　　　 L/／｀ヽ､            Live2D 看板娘 参数设置
-    　　 　 /　 ／,　 /|　 ,　 ,　　　 ',                                           Version 1.4.2
-    　　　ｲ 　/ /-‐/　ｉ　L_ ﾊ ヽ!　 i                            Update 2018.11.12
-    　　　 ﾚ ﾍ 7ｲ｀ﾄ　 ﾚ'ｧ-ﾄ､!ハ|　 |  
-    　　　　 !,/7 '0'　　 ´0iソ| 　 |　　　
-    　　　　 |.从"　　_　　 ,,,, / |./ 　 |             网页添加 Live2D 看板娘
-    　　　　 ﾚ'| i＞.､,,__　_,.イ / 　.i 　|                    https://www.fghrsh.net/post/123.html
-    　　　　　 ﾚ'| | / k_７_/ﾚ'ヽ,　ﾊ.　|           
-    　　　　　　 | |/i 〈|/　 i　,.ﾍ |　i　|    Thanks
-    　　　　　　.|/ /　ｉ： 　 ﾍ!　　＼　|          journey-ad / https://github.com/journey-ad/live2d_src
-    　　　 　 　 kヽ>､ﾊ 　 _,.ﾍ､ 　 /､!            xiazeyu / https://github.com/xiazeyu/live2d-widget.js
-    　　　　　　 !'〈//｀Ｔ´', ＼ ｀'7'ｰr'          Live2d Cubism SDK WebGL 2.1 Projrct & All model authors.
-    　　　　　　 ﾚ'ヽL__|___i,___,ンﾚ|ノ
-    　　　　　 　　　ﾄ-,/　|___./
-    　　　　　 　　　'ｰ'　　!_,.:*********************************************************************************/
-
-
+window.live2d_settings = Array();
 // 后端接口
 live2d_settings['modelAPI']             = '//live2d.fghrsh.net/api/';   // 自建 API 修改这里
 live2d_settings['tipsMessage']          = 'waifu-tips.json';            // 同目录下可省略路径
@@ -155,7 +135,6 @@ function initModel(waifuPath, type) {
     if (window.location.protocol == 'file:' && live2d_settings.modelAPI.substr(0,2) == '//') live2d_settings.modelAPI = 'http:'+live2d_settings.modelAPI;
     
     $('.waifu-tool .fui-home').click(function (){
-        //window.location = 'https://www.fghrsh.net/';
         window.location = live2d_settings.homePageUrl;
     });
     
@@ -199,7 +178,7 @@ function loadModel(modelId, modelTexturesId=0) {
     } else {
         sessionStorage.setItem('modelId', modelId);
         sessionStorage.setItem('modelTexturesId', modelTexturesId);
-    }loadlive2d('live2d', live2d_settings.modelAPI+'get/?id='+modelId+'-'+modelTexturesId, (live2d_settings.showF12Status ? console.log('[Status]','live2d','模型',modelId+'-'+modelTexturesId,'加载完成'):null));
+    }loadlive2d('live2d', live2d_settings.modelAPI, (live2d_settings.showF12Status ? console.log('[Status]','live2d','模型',modelId+'-'+modelTexturesId,'加载完成'):null));
 }
 
 function loadTipsMessage(result) {
@@ -317,7 +296,17 @@ function loadTipsMessage(result) {
         var modelTexturesId = modelStorageGetItem('modelTexturesId');
         var modelTexturesRandMode = live2d_settings.modelTexturesRandMode;
         
-        $.ajax({
+        /*$.ajax({
+           url:  live2d_settings.modelAPI,
+            dataType: "json",
+            success: function (result) {
+                alert(result.textures);
+            }
+        });*/
+        $.getJSON(live2d_settings.modelAPI,function (result) {
+            alert(result.textures);
+        });
+        /*$.ajax({
             cache: modelTexturesRandMode == 'switch' ? true : false,
             url: live2d_settings.modelAPI+modelTexturesRandMode+'_textures/?id='+modelId+'-'+modelTexturesId,
             dataType: "json",
@@ -327,7 +316,7 @@ function loadTipsMessage(result) {
                 else showMessage(waifu_tips.load_rand_textures[1], 3000, true);
                 loadModel(modelId, result.textures['id']);
             }
-        });
+        });*/
     }
     
     function modelStorageGetItem(key) { return live2d_settings.modelStorage ? localStorage.getItem(key) : sessionStorage.getItem(key); }
