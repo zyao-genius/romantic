@@ -1,5 +1,6 @@
 window.live2d_settings = Array();
 // 后端接口
+live2d_settings['serverPrefix']         = '';
 live2d_settings['modelAPI']             = '//live2d.fghrsh.net/api/';   // 自建 API 修改这里
 live2d_settings['tipsMessage']          = 'waifu-tips.json';            // 同目录下可省略路径
 live2d_settings['hitokotoAPI']          = 'lwl12.com';                  // 一言 API，可选 'lwl12.com', 'hitokoto.cn', 'jinrishici.com'(古诗词)
@@ -72,7 +73,6 @@ String.prototype.render = function(context) {
 };
 
 var re = /x/;
-console.log(re);
 
 function empty(obj) {return typeof obj=="undefined"||obj==null||obj==""?true:false}
 function getRandText(text) {return Array.isArray(text) ? text[Math.floor(Math.random() * text.length + 1)-1] : text}
@@ -98,13 +98,12 @@ function hideMessage(timeout) {
     $('.waifu-tips').delay(timeout).fadeTo(200, 0);
 }
 
-function initModel(waifuPath, type) {
-    /* console welcome message */
-    eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('8.d(" ");8.d("\\U,.\\y\\5.\\1\\1\\1\\1/\\1,\\u\\2 \\H\\n\\1\\1\\1\\1\\1\\b \', !-\\r\\j-i\\1/\\1/\\g\\n\\1\\1\\1 \\1 \\a\\4\\f\'\\1\\1\\1 L/\\a\\4\\5\\2\\n\\1\\1 \\1 /\\1 \\a,\\1 /|\\1 ,\\1 ,\\1\\1\\1 \',\\n\\1\\1\\1\\q \\1/ /-\\j/\\1\\h\\E \\9 \\5!\\1 i\\n\\1\\1\\1 \\3 \\6 7\\q\\4\\c\\1 \\3\'\\s-\\c\\2!\\t|\\1 |\\n\\1\\1\\1\\1 !,/7 \'0\'\\1\\1 \\X\\w| \\1 |\\1\\1\\1\\n\\1\\1\\1\\1 |.\\x\\"\\1\\l\\1\\1 ,,,, / |./ \\1 |\\n\\1\\1\\1\\1 \\3\'| i\\z.\\2,,A\\l,.\\B / \\1.i \\1|\\n\\1\\1\\1\\1\\1 \\3\'| | / C\\D/\\3\'\\5,\\1\\9.\\1|\\n\\1\\1\\1\\1\\1\\1 | |/i \\m|/\\1 i\\1,.\\6 |\\F\\1|\\n\\1\\1\\1\\1\\1\\1.|/ /\\1\\h\\G \\1 \\6!\\1\\1\\b\\1|\\n\\1\\1\\1 \\1 \\1 k\\5>\\2\\9 \\1 o,.\\6\\2 \\1 /\\2!\\n\\1\\1\\1\\1\\1\\1 !\'\\m//\\4\\I\\g\', \\b \\4\'7\'\\J\'\\n\\1\\1\\1\\1\\1\\1 \\3\'\\K|M,p,\\O\\3|\\P\\n\\1\\1\\1\\1\\1 \\1\\1\\1\\c-,/\\1|p./\\n\\1\\1\\1\\1\\1 \\1\\1\\1\'\\f\'\\1\\1!o,.:\\Q \\R\\S\\T v"+e.V+" / W "+e.N);8.d(" ");',60,60,'|u3000|uff64|uff9a|uff40|u30fd|uff8d||console|uff8a|uff0f|uff3c|uff84|log|live2d_settings|uff70|u00b4|uff49||u2010||u3000_|u3008||_|___|uff72|u2500|uff67|u30cf|u30fc||u30bd|u4ece|u30d8|uff1e|__|u30a4|k_|uff17_|u3000L_|u3000i|uff1a|u3009|uff34|uff70r|u30fdL__||___i|l2dVerDate|u30f3|u30ce|nLive2D|u770b|u677f|u5a18|u304f__|l2dVersion|FGHRSH|u00b40i'.split('|'),0,{}));
+function initModel(waifuPath, serverPrefix, skinsPath) {
     
     /* 判断 JQuery */
     if (typeof($.ajax) != 'function') typeof(jQuery.ajax) == 'function' ? window.$ = jQuery : console.log('[Error] JQuery is not defined.');
-    
+
+    live2d_settings.serverPrefix = serverPrefix;
     /* 加载看板娘样式 */
     live2d_settings.waifuSize = live2d_settings.waifuSize.split('x');
     live2d_settings.waifuTipsSize = live2d_settings.waifuTipsSize.split('x');
@@ -118,6 +117,15 @@ function initModel(waifuPath, type) {
     $(".waifu-tips").css("font-size",live2d_settings.waifuFontSize);
     $(".waifu-tool").css("font-size",live2d_settings.waifuToolFont);
     $(".waifu-tool span").css("line-height",live2d_settings.waifuToolLine);
+
+    if (!live2d_settings.showToolMenu) $('.waifu-tool').hide();
+    if (!live2d_settings.canCloseLive2d) $('.waifu-tool .fui-cross').hide();
+    if (!live2d_settings.canSwitchModel) $('.waifu-tool .fui-eye').hide();
+    if (!live2d_settings.canSwitchTextures) $('.waifu-tool .fui-user').hide();
+    if (!live2d_settings.canSwitchHitokoto) $('.waifu-tool .fui-chat').hide();
+    if (!live2d_settings.canTakeScreenshot) $('.waifu-tool .fui-photo').hide();
+    if (!live2d_settings.canTurnToHomePage) $('.waifu-tool .fui-home').hide();
+    if (!live2d_settings.canTurnToAboutPage) $('.waifu-tool .fui-info-circle').hide();
     
     if (live2d_settings.waifuEdgeSide[0] == 'left') $(".waifu").css("left",live2d_settings.waifuEdgeSide[1]+'px');
     else if (live2d_settings.waifuEdgeSide[0] == 'right') $(".waifu").css("right",live2d_settings.waifuEdgeSide[1]+'px');
@@ -139,7 +147,6 @@ function initModel(waifuPath, type) {
     });
     
     $('.waifu-tool .fui-info-circle').click(function (){
-        //window.open('https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02');
         window.open(live2d_settings.aboutPageUrl);
     });
     
@@ -152,15 +159,6 @@ function initModel(waifuPath, type) {
         });
     }
     
-    if (!live2d_settings.showToolMenu) $('.waifu-tool').hide();
-    if (!live2d_settings.canCloseLive2d) $('.waifu-tool .fui-cross').hide();
-    if (!live2d_settings.canSwitchModel) $('.waifu-tool .fui-eye').hide();
-    if (!live2d_settings.canSwitchTextures) $('.waifu-tool .fui-user').hide();
-    if (!live2d_settings.canSwitchHitokoto) $('.waifu-tool .fui-chat').hide();
-    if (!live2d_settings.canTakeScreenshot) $('.waifu-tool .fui-photo').hide();
-    if (!live2d_settings.canTurnToHomePage) $('.waifu-tool .fui-home').hide();
-    if (!live2d_settings.canTurnToAboutPage) $('.waifu-tool .fui-info-circle').hide();
-
     if (waifuPath === undefined) waifuPath = '';
     var modelId = localStorage.getItem('modelId');
     var modelTexturesId = localStorage.getItem('modelTexturesId');
@@ -168,7 +166,31 @@ function initModel(waifuPath, type) {
     if (!live2d_settings.modelStorage || modelId == null) {
         var modelId = live2d_settings.modelId;
         var modelTexturesId = live2d_settings.modelTexturesId;
-    } loadModel(modelId, modelTexturesId);
+    }
+    if (skinsPath != undefined){
+        $.ajax({
+            cache: true,
+            url: skinsPath,
+            dataType: "json",
+            success: function (result) {
+                let skinsArray = result.live2dSkins.skins;
+                $.each(skinsArray, function (key, val) {
+                    if (val.id == modelId){
+                        let pathArray = val.path;
+                        if (modelTexturesId < 0 || modelTexturesId >= pathArray.length){
+                            live2d_settings.modelAPI = live2d_settings.serverPrefix + pathArray[live2d_settings.modelTexturesId];
+                            modelTexturesId = live2d_settings.modelTexturesId;
+                            localStorage.setItem('modelTexturesId', live2d_settings.modelTexturesId);
+                        }else {
+                            live2d_settings.modelAPI = live2d_settings.serverPrefix + pathArray[modelTexturesId];
+                        }
+                    }
+                });
+                loadModel(modelId, modelTexturesId);
+            }
+        });
+    }
+    
 }
 
 function loadModel(modelId, modelTexturesId=0) {
@@ -178,7 +200,8 @@ function loadModel(modelId, modelTexturesId=0) {
     } else {
         sessionStorage.setItem('modelId', modelId);
         sessionStorage.setItem('modelTexturesId', modelTexturesId);
-    }loadlive2d('live2d', live2d_settings.modelAPI, (live2d_settings.showF12Status ? console.log('[Status]','live2d','模型',modelId+'-'+modelTexturesId,'加载完成'):null));
+    }
+    loadlive2d('live2d', live2d_settings.modelAPI);
 }
 
 function loadTipsMessage(result) {
@@ -275,7 +298,16 @@ function loadTipsMessage(result) {
     var waifu_tips = result.waifu;
     
     function loadOtherModel() {
-        var modelId = modelStorageGetItem('modelId');
+        $.ajax({
+           url: "http://127.0.0.1:8090/themes/romantic/source/live2d/assets/live2d-skins.json" ,
+            dataType: "json",
+            success: function (result) {
+               console.log(result.live2dSkins.skins);
+               
+               console.log(result.live2dSkins.pioSkinsArray[0]);
+            }
+        });
+        /*var modelId = modelStorageGetItem('modelId');
         var modelRandMode = live2d_settings.modelRandMode;
         
         $.ajax({
@@ -288,24 +320,37 @@ function loadTipsMessage(result) {
                 $.each(waifu_tips.model_message, function(i,val) {if (i==result.model['id']) message = getRandText(val)});
                 showMessage(message, 3000, true);
             }
-        });
+        });*/
     }
     
     function loadRandTextures() {
-        var modelId = modelStorageGetItem('modelId');
-        var modelTexturesId = modelStorageGetItem('modelTexturesId');
-        var modelTexturesRandMode = live2d_settings.modelTexturesRandMode;
-        
-        /*$.ajax({
-           url:  live2d_settings.modelAPI,
-            dataType: "json",
-            success: function (result) {
-                alert(result.textures);
+        var modelId = localStorage.getItem('modelId');
+        var modelTexturesId = localStorage.getItem('modelTexturesId');
+
+        if (!live2d_settings.modelStorage || modelId == null) {
+            var modelId = live2d_settings.modelId;
+            var modelTexturesId = live2d_settings.modelTexturesId;
+        }
+        let skinsArray = live2d.skins;
+        let index = 0;
+        $.each(skinsArray, function (key, val) {
+            if (val.id == modelId){
+                let pathArray = val.path;
+                if (modelTexturesId < 0 || modelTexturesId >= pathArray.length){
+                    live2d_settings.modelAPI = live2d_settings.serverPrefix + pathArray[live2d_settings.modelTexturesId];
+                    modelTexturesId = live2d_settings.modelTexturesId;
+                    localStorage.setItem('modelTexturesId', live2d_settings.modelTexturesId);
+                }else {
+                    modelTexturesId = index = Math.floor((Math.random() * pathArray.length));
+                    localStorage.setItem('modelTexturesId', modelTexturesId);
+                    live2d_settings.modelAPI = live2d_settings.serverPrefix + pathArray[index];
+                }
             }
-        });*/
-        $.getJSON(live2d_settings.modelAPI,function (result) {
-            alert(result.textures);
         });
+        $.getJSON(live2d_settings.modelAPI,function (result) {
+            loadModel(modelId, modelTexturesId);
+        });
+        
         /*$.ajax({
             cache: modelTexturesRandMode == 'switch' ? true : false,
             url: live2d_settings.modelAPI+modelTexturesRandMode+'_textures/?id='+modelId+'-'+modelTexturesId,

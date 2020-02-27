@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="${static!}/source/live2d/assets/waifu.css">
+<script src="${static!}/source/live2d/assets/live2dskinconfig.js"></script>
 <script src="${static!}/source/live2d/assets/waifu-tips.js"></script>
 <script src="${static!}/source/live2d/assets/live2d.js"></script>
 
@@ -17,12 +18,12 @@
 </div>
 <script>
     $(function () {
-        /*live2d_settings['modelId'] = 2;
-        live2d_settings['modelTexturesId'] = 87;*/
+        live2d_settings['modelId'] = 1;
+        live2d_settings['modelTexturesId'] = 20;
         live2d_settings['modelTexturesRandMode']= 'switch';
         live2d_settings['waifuEdgeSide'] = 'right:30';
-        live2d_settings['modelAPI'] = '${static!}/source/live2d/model/Potion-Maker/Pio/skinJson/hanbok-costume-red.json';
+        live2d_settings['modelAPI'] = '${static!}/source/live2d/model/Potion-Maker/Pio/skinjson/hanbok-costume-red.json';
 
-        initModel("${static!}/source/live2d/assets/waifu-tips.json")
+        initModel("${static!}/source/live2d/assets/waifu-tips.json", "${static!}", "${static!}/source/live2d/assets/live2d-skins.json")
     });
 </script>

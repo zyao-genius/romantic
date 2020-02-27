@@ -40,7 +40,7 @@
         <link rel="stylesheet" href="${static!}/source/css/post.css">
         <script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
         <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-        <script type="text/javascript" src="${static!}/source/js/post.js"></script>
+        <#--<script type="text/javascript" src="${static!}/source/js/post.js"></script>-->
     </#if >
 
     <style>
