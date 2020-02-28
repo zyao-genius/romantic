@@ -23,6 +23,8 @@
 
     <#--引用公共的css和js-->
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${static!}/source/live2d/assets/waifu.css">
+    <#--<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">-->
     <#--Font Awesome 图标库-->
     <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <link href="${static!}/source/css/base.css" rel="stylesheet">
@@ -31,6 +33,15 @@
     <link rel="stylesheet" href="${static!}/source/css/style.css">
 
     <script src="${static!}/source/js/jquery-1.8.3.min.js"></script>
+    <script src="${static!}/source/live2d/assets/live2d.js"></script>
+    <script src="${static!}/source/js/jquery-ui.min.js"></script>
+    <script src="${static!}/source/js/jquery.ui.touch-punch.min.js"></script>
+    <script>
+        window.onload = function () {
+            loadlive2d('live2d', '${static!}/source/live2d/model/xxban/model.json');
+            $( "#live2d" ).draggable();
+        }
+    </script>
     <#--<script src="${static!}/source/live2d/assert/jquery.min.js"></script>-->
     <script src="${static!}/source/js/comm.js"></script>
     <script type="text/javascript" src="${static!}/source/js/index.js"></script>
