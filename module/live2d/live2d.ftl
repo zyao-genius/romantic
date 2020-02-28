@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="${static!}/source/live2d/assets/waifu.css">
 <script src="${static!}/source/live2d/assets/live2d.js"></script>
 
 <div class="waifu" style="right: -70px">
