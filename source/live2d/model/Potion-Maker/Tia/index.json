@@ -2,7 +2,12 @@
     "version":"1.0.0",
     "model":"model.moc",
     "textures":[
-        "textures/default-costume.png"
+		"textures/pushcat-costume.png",
+		"textures/hood-costume-red.png",
+		"textures/blackcat-costume.png",
+        "textures/bikini-costume-blue.png",
+		"textures/default-costume.png",
+        "textures/bikini-costume-pink.png"
     ],
     "layout":{
         "center_x":0.0,

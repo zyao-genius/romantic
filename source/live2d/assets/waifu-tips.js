@@ -201,7 +201,20 @@ function loadModel(modelId, modelTexturesId=0) {
         sessionStorage.setItem('modelId', modelId);
         sessionStorage.setItem('modelTexturesId', modelTexturesId);
     }
-    loadlive2d('live2d', live2d_settings.modelAPI);
+
+    $.getJSON('http://127.0.0.1:8090/themes/romantic/source/live2d/model/Potion-Maker/Pio/index.json', function(model) {
+        modelObj = JSON.parse(JSON.stringify(model, null, 2)); //这里
+        console.log(modelObj);
+        textures = modelObj.textures;
+        console.log(textures);
+        modelObj.textures = ['http://127.0.0.1:8090/themes/romantic/source/live2d/model/Potion-Maker/Pio/' + textures[1]];
+        console.log(modelObj.textures);
+        console.log(modelObj);
+        //loadlive2d('live2d', '/live2d/model/Pio/model.json', '', modelObj);
+        loadlive2d('live2d', "http://127.0.0.1:8090/themes/romantic/source/live2d/model/Potion-Maker/Pio/index.json", "", modelObj);
+    });
+    //loadlive2d('live2d', "http://127.0.0.1:8090/themes/romantic/source/live2d/model/Potion-Maker/Pio/index.json", "", modelObj);
+    
 }
 
 function loadTipsMessage(result) {
@@ -347,10 +360,14 @@ function loadTipsMessage(result) {
                 }
             }
         });
-        $.getJSON(live2d_settings.modelAPI,function (result) {
-            loadModel(modelId, modelTexturesId);
+        $.ajax({
+            cache: true,
+            url: live2d_settings.modelAPI,
+            dataType: "json",
+            success: function () {
+                loadModel(modelId, modelTexturesId);
+            }
         });
-        
         /*$.ajax({
             cache: modelTexturesRandMode == 'switch' ? true : false,
             url: live2d_settings.modelAPI+modelTexturesRandMode+'_textures/?id='+modelId+'-'+modelTexturesId,

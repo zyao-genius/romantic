@@ -2,7 +2,11 @@
 	"version":"1.0.0",
 	"model":"model.moc",
     "textures":[
-        "textures/default-costume.png"
+		"textures/bunny-girl-costume.png",
+		"textures/cake-costume-choco.png",
+		"textures/animal-costume.png",
+        "textures/default-costume.png",
+        "textures/animal-costume-racoon.png"
     ],
     "layout":{
 		"center_x":0.0,

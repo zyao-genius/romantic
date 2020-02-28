@@ -1,20 +1,9 @@
 <link rel="stylesheet" href="${static!}/source/live2d/assets/waifu.css">
-<script src="${static!}/source/live2d/assets/live2dskinconfig.js"></script>
 <script src="${static!}/source/live2d/assets/waifu-tips.js"></script>
 <script src="${static!}/source/live2d/assets/live2d.js"></script>
 
-<div class="waifu">
-    <div class="waifu-tips"></div>
-    <canvas id="live2d" class="live2d"></canvas>
-    <div class="waifu-tool">
-        <span class="fui-home"></span>
-        <span class="fui-chat"></span>
-        <span class="fui-eye"></span>
-        <span class="fui-user"></span>
-        <span class="fui-photo"></span>
-        <span class="fui-info-circle"></span>
-        <span class="fui-cross"></span>
-    </div>
+<div class="waifu" style="right: 30px">
+    <canvas id="live2d" class="live2d" width="280px" height="250px"></canvas>
 </div>
 <script>
     $(function () {
@@ -24,6 +13,8 @@
         live2d_settings['waifuEdgeSide'] = 'right:30';
         live2d_settings['modelAPI'] = '${static!}/source/live2d/model/Potion-Maker/Pio/skinjson/hanbok-costume-red.json';
 
-        initModel("${static!}/source/live2d/assets/waifu-tips.json", "${static!}", "${static!}/source/live2d/assets/live2d-skins.json")
+        //loadlive2d('live2d', '${static!}/source/live2d/model/Potion-Maker/Pio/index.json');
+        loadlive2d('live2d', '${static!}/source/live2d/model/Potion-Maker/Tia/index.json');
+        //initModel("${static!}/source/live2d/assets/waifu-tips.json", "${static!}")
     });
 </script>
