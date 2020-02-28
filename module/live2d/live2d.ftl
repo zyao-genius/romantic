@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="${static!}/source/live2d/assets/waifu.css">
 <#--<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">-->
-<script src="${static!}/source/live2d/assets/jquery-ui.min.js"></script>
+<script src="${static!}/source/js/jquery-ui.min.js"></script>
+<script src="${static!}/source/js/jquery.ui.touch-punch.min.js"></script>
 <script src="${static!}/source/live2d/assets/live2d.js"></script>
 
 <div class="waifu" style="right: -70px">
